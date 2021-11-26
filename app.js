@@ -17,6 +17,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
+/* Para recuperar los datos enviados, lo hacemos a partir del atributo body del objeto request. 
+Pero antes es necesario indicarle a Express que vamos a trabajar con JSON y que la información 
+la envíe en el formato correcto. Para eso es necesario ejecutar dos líneas de código mediante 
+el método use del objeto app (linea 24 y 25)*/
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -35,12 +39,12 @@ app.get('/autos', function(req, res) {
 */
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
