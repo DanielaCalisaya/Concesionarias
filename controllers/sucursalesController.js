@@ -12,7 +12,10 @@ let controller = {
             let autos = getAutos.filter(auto => auto.sucursal === sucursalId)
             //Estoy haciendo una comparación estricta al poner los 3 iguales. Pero llega un numero ta tambien un string, por eso le tengo que asignar un +
 
-            res.send(autos)
+            res.render('sucursal', { //Se renderiza la vista sucursal
+                sucursal,
+                autos
+            })
 
         } else {
             res.send('No encontramos la ruta seleccionada')

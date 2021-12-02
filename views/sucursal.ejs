@@ -7,14 +7,25 @@
     
     <%- include('partials/header.ejs') %> 
 
-    <main>
-        <h2 class="text-center"></h2>
-        <p>Dirección: </p>
-        <p>Teléfono: </p>
-        <h3>Nuestros autos</h3>
+    <main class="p-3 pb-5">
+        <h2 class="text-center"><%= sucursal.nombre %> </h2>
+        <p>Dirección: <%= sucursal.direccion %> </p>
+        <p>Teléfono: <%= sucursal.telefono %></p>
+        <h3 class="text-center">Nuestros autos</h3>
         <section class="container">
           <div class="row">
-            
+            <% autos.forEach(auto => { %>
+                <div class="card col-sm-12 col-md-4 col-lg-3 mb-1" style="width: 18rem;">
+                    <img src="/images/<%- auto.imagen %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%- auto.marca %></h5>
+                      <p class="card-text"><%- auto.modelo %></p>
+                      <p class="card-text"><%- auto.anio %></p>
+                      <p class="card-text"><%- auto.color %></p>
+                      <a href="/sucursal/<%- auto.id %>" class="btn btn-primary">Ver auto</a>
+                    </div>
+                  </div>
+            <% }) %>
           </div>
         </section>
     </main>

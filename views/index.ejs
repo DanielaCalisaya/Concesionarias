@@ -15,13 +15,13 @@
         <!-- row viene de filas en flex-box -->
         <% sucursales.forEach(sucursal => { %>
           <!-- acá me traje un card, una tarjetita que incluye foto -->
-          <div class="card" style="width: 18rem;">
-            <img src="/images/<%- sucursal.imagen %> " class="card-img-top" alt="...">
+          <div class="card col-sm-12 col-md-4 col-lg-3 mb-1" style="width: 18rem;">
+            <img src="/images/<%- sucursal.imagen %>" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><%- sucursal.nombre %></h5>
               <p class="card-text"><%- sucursal.direccion %></p>
               <p class="card-text"><%- sucursal.telefono %></p>
-              <a href="#" class="btn btn-primary">Ver sucursal</a>
+              <a href="/sucursal/<%- sucursal.id %>" class="btn btn-primary">Ver sucursal</a>
             </div>
           </div>
         <% }) %>
