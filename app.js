@@ -6,9 +6,9 @@ let logger = require('morgan');
 
 /* Enrutadores */
 let indexRouter = require('./routes/index');
-/* let usersRouter = require('./routes/users');
-let sucursalesRouter = require('routes/sucursales');
-let autosRouter = require('routes/autos'); */ 
+let usersRouter = require('./routes/users');
+let sucursalesRouter = require('./routes/sucursales');
+/*let autosRouter = require('routes/autos');  */
 
 let app = express();
 
@@ -28,9 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* Middlewares de rutas */
 app.use('/', indexRouter);
-/* app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 app.use('/sucursal', sucursalesRouter);
-app.use('/autos', autosRouter); */
+/*app.use('/autos', autosRouter);  */
 
 /*
 app.get('/autos', function(req, res) {

@@ -1,4 +1,4 @@
-let { getSucursales} = require('../data/dataBase'); // Aqui haré el destructuring
+let { getSucursales} = require('../data/dataBase.js'); // Aqui haré el destructuring
 
 let controller = {
     index: function(req, res) {
