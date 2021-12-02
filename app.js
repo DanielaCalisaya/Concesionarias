@@ -6,9 +6,9 @@ let logger = require('morgan');
 
 /* Enrutadores */
 let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
-let sucursalesRouter = require('routes/sucursales');/*********/
-let autosRouter = require('routes/autos');/**********/
+/* let usersRouter = require('./routes/users');
+let sucursalesRouter = require('routes/sucursales');
+let autosRouter = require('routes/autos'); */ 
 
 let app = express();
 
@@ -28,9 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* Middlewares de rutas */
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/sucursal', sucursalesRouter);/************/
-app.use('/autos', autosRouter);/****************/
+/* app.use('/users', usersRouter);
+app.use('/sucursal', sucursalesRouter);
+app.use('/autos', autosRouter); */
 
 /*
 app.get('/autos', function(req, res) {
@@ -38,8 +38,9 @@ app.get('/autos', function(req, res) {
 })  Esto estabamos haciendo antes
 */
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
+// catch 404 and forward to error handler -> Middleware(si no encuentra la ruta te tira este error)
+app.use(function (req, res, next) { //Controlan la informacion y generan una accion frente a eso
+  //Si esta todo bien en vez de generar una respuesta lo pasa a otro nivel
   next(createError(404));
 });
 
