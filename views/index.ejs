@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concesionarias</title>
   <!-- link del css de bootstrap(los links los encuentro entrando en la página y entrando a get started) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
+
 <body>
-  
+
+  <!-- Me traje el código de un header básico -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">Concesionarias</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -35,8 +40,33 @@
     </div>
   </nav>
 
+  <main>
+    <h2 class="text-center">Nuestras sucursales</h2>
+    <section class="container">
+      <!-- si quiero usar el sistema de columnas de bootstrap tengo que usar una caja container, dentro otra caja que tenga de clase row y de hay puedo usar el sistema de columnas-->
+      <div class="row">
+        <!-- row viene de filas en flex-box -->
+        <% sucursales.forEach(sucursal => { %>
+          <!-- acá me traje un card, una tarjetita que incluye foto -->
+          <div class="card" style="width: 18rem;">
+            <img src="/images/<%- sucursal.imagen %> " class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%- sucursal.nombre %></h5>
+              <p class="card-text"><%- sucursal.direccion %></p>
+              <p class="card-text"><%- sucursal.telefono %></p>
+              <a href="#" class="btn btn-primary">Ver sucursal</a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  </main>
+
 
   <!-- link del java script de bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
