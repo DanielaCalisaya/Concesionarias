@@ -8,7 +8,8 @@ let logger = require('morgan');
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let sucursalesRouter = require('./routes/sucursales');
-/*let autosRouter = require('routes/autos');  */
+let autosRouter = require('./routes/autos'); /***********/
+let adminRouter = require('./routes/admin'); /*****/
 
 let app = express();
 
@@ -30,7 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/sucursal', sucursalesRouter);
-/*app.use('/autos', autosRouter);  */
+app.use('/autos', autosRouter);  
+app.use('/admin', adminRouter)
 
 /*
 app.get('/autos', function(req, res) {
