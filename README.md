@@ -8,4 +8,4 @@
 - EJS
 - Bootstrap
 
-### Clases 51 y 52
+### Clases 51, 52, 54 y 55
