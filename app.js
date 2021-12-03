@@ -8,8 +8,8 @@ let logger = require('morgan');
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let sucursalesRouter = require('./routes/sucursales');
-let autosRouter = require('./routes/autos'); /***********/
-let adminRouter = require('./routes/admin'); /*****/
+let autosRouter = require('./routes/autos'); 
+let adminRouter = require('./routes/admin'); 
 
 let app = express();
 
@@ -21,9 +21,9 @@ app.use(logger('dev'));
 /* Para recuperar los datos enviados, lo hacemos a partir del atributo body del objeto request. 
 Pero antes es necesario indicarle a Express que vamos a trabajar con JSON y que la información 
 la envíe en el formato correcto. Para eso es necesario ejecutar dos líneas de código mediante 
-el método use del objeto app (linea 24 y 25)*/
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+el método use del objeto app (linea 25 y 26)*/
+app.use(express.json());//Escribirlas arriba de los middlewares de rutas
+app.use(express.urlencoded({ extended: false }));//Estas dos lineas se necesitan para poder capturarlas, express generator ya las trae
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

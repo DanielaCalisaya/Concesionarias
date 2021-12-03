@@ -11,6 +11,12 @@ let controller = {
                 return getAutos.filter(auto => auto.sucursal === idSucursal)
             }
         })
+    },
+    create: (req, res) => {
+        res.render('admin/agregarSucursal')
+    },
+    store: (req, res) => {
+        res.send(req.body)
     }
 }
 
