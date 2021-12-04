@@ -35,6 +35,18 @@ let controller = {
         getSucursales.push(nuevaSucursal); //Si ponemos solo esta linea, se escribira pero no se guardará en nuestra base de datos y quedará
         writeJson(getSucursales) //Lo escribe en el Json
         res.redirect('/admin/sucursales') //Después de cargar los datos quiero que vayan a esa vista
+    },
+    edit: (req, res) => {
+        let idSucursal = +req.params.id;
+
+        let sucursal = getSucursales.find(sucursal => sucursal.id === idSucursal);
+
+        res.render('admin/editarSucursal', {
+            sucursal
+        })
+
+    },
+    update: (req, res) => {
 
     }
 }

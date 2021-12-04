@@ -3,6 +3,8 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let methodOverride = require('method-override');/* Requerimos el método que instalamos para utilizarlo */
+
 
 /* Enrutadores */
 let indexRouter = require('./routes/index');
@@ -25,7 +27,9 @@ el método use del objeto app (linea 25 y 26)*/
 app.use(express.json());//Escribirlas arriba de los middlewares de rutas
 app.use(express.urlencoded({ extended: false }));//Estas dos lineas se necesitan para poder capturarlas, express generator ya las trae
 app.use(cookieParser());
+app.use(express.methodOverride('_method')); /*Otra linea necesaria para este método  */
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 /* Middlewares de rutas */
 app.use('/', indexRouter);
