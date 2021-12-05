@@ -6,7 +6,8 @@
     <main class="container">
         <h3 class="text-center">Editar sucursal <%= sucursal.nombre %></h3>
         <div class="container col-md-4" >
-        <form class="row g-3" action="" method="">
+        <form class="row g-3" action="/admin/editarSucursal/<%= sucursal.id %>?_method=PUT" method="POST">
+            <!-- el metodo override captura  del query string, y sirve para el POST(metodo override solo para post y delete)-->
             <div class="col-12">
                 <label for="inputName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="inputName" name="nombre" value="<%= sucursal.nombre %>">

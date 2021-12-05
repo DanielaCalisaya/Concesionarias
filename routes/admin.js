@@ -15,7 +15,8 @@ router.post('/agregarSucursal', controller.store);
 router.get('/editarSucursal/:id', controller.edit);
 /* put - edita la sucursal */
 router.put('/editarSucursal/:id', controller.update);
-
+/* delete - borro la sucursal */
+router.delete('/eliminarSucursal/:id', controller.fatality);
 
 
 module.exports = router;
